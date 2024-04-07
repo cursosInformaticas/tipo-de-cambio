@@ -1,3 +1,4 @@
+1. Reto técnico:
 - docker-compose up
 - docker-compose down
 - docker-compose ps
