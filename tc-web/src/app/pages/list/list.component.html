@@ -1,0 +1,74 @@
+
+<div class="container">
+  <div class="row py-4">
+    <div class="col-12 grid-margin">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center"> LISTAR TIPO CAMBIO</h2>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="monto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>
+        <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+    </ng-container>
+
+
+  <ng-container matColumnDef="monedaOrigen">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Moneda Origen </th>
+    <td mat-cell *matCellDef="let element"> {{element.monedaOrigen}} </td>
+  </ng-container>
+  <ng-container matColumnDef="monedaDestino">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Moneda destino </th>
+    <td mat-cell *matCellDef="let element"> {{element.monedaDestino}} </td>
+  </ng-container>
+  <ng-container matColumnDef="cantidadConvertida">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad Convertida </th>
+    <td mat-cell *matCellDef="let element"> {{element.cantidadConvertida}} </td>
+  </ng-container>
+  <ng-container matColumnDef="tipoCambio">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo Cambio </th>
+    <td mat-cell *matCellDef="let element"> {{element.tipoCambio}} </td>
+  </ng-container>
+
+    <!--ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-button class="btn btn-primary w-100 py-2"
+            [routerLink]="['/update/edit', element.id]"
+            >
+                Actualizar
+            </button>
+        </td>
+    </-ng-container-->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" ></mat-paginator>
+
+
+  <div class="row py-4">
+    <div class="col-md-3">
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary w-100 py-2" style="float: left" [routerLink]="['/agregar', 'USD']" >
+             Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+

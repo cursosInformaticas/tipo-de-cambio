@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  tipocambio:
+    container_name: tipocambio
+    build:
+      context: ./
+      dockerfile: ./tipocambio/Dockerfile
+    ports:
+      - "8034:8034"
+    networks:
+      - tc-network
+    restart: always
+  app:
+    build:
+      context: ./tc-web
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./tc-web:/usr/src/app
+      - /usr/src/app/node_modules
+    command: ng serve --host 0.0.0.0 --poll 1
+    networks:
+      - tc-network
+networks:
+  tc-network:
+    driver: bridge
