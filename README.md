@@ -1,6 +1,6 @@
-docker-compose up
-docker-compose down
-docker-compose ps
-docker-compose logs
-docker build -t tcambio . -f ./tipocambio/Dockerfile
-docker run -p 8034:8034 --rm -d --name tcambio tcambio
+- docker-compose up
+- docker-compose down
+- docker-compose ps
+- docker-compose logs
+- docker build -t tcambio . -f ./tipocambio/Dockerfile
+- docker run -p 8034:8034 --rm -d --name tcambio tcambio
